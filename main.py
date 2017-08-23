@@ -1,12 +1,11 @@
 from spy_details import spy_name, spy_salutation, spy_rating, spy_age, spy_is_online
-
 print "Hello! Let\'s get started"
-
 question = "Do you want to continue as " + spy_salutation + " " + spy_name + " (Y/N)? "
 existing = raw_input(question)
 
 
-def start_chat(spy_name, spy_age, spy_rating):
+def start_chat(spy_name,  spy_age, spy_rating):
+
     current_status_message = None
 
     spy_name = spy_salutation + " " + spy_name
