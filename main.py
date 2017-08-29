@@ -1,5 +1,11 @@
-
+#importing spy_details.py file
 from spy_details import spy_name, spy_salutation, spy_age , spy_rating
+import add_status
+add_status.STATUS_MESSAGES = ['My name is Bond, James Bond', 'Shaken, not stirred.', 'Keeping the British end up, Sir']
+
+
+#importing start_chat.p
+
 import start_chat
 print 'Let\'s get started'
 
@@ -16,6 +22,9 @@ elif(existing == "N" or existing == "n"):
             spy_name = raw_input("provide your name here again :")
         else:
             print "VALID INPUT NAME "
+            spy_age = 0
+            spy_rating = 0.0
+            spy_is_online = False
 
             print 'Welcome ' + spy_name + '. Glad to have you back with us.'
 
