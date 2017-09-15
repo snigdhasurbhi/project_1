@@ -16,4 +16,4 @@ def send_message():
 
     new_chat = {"messaage": text, "time ": datetime.now(), "sent_by_me": False
 
-    }
+    }e
