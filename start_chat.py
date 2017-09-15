@@ -1,5 +1,5 @@
 #start_chat() function definition
-def start_chat(name, age, rating):
+def start_chat(name, age, rating, s):
     show_menu = True
     while show_menu:
         menu_choices = "What do you want to do ? \n 1. ADD STATUS \n 2. CLOSE APPLICATION"

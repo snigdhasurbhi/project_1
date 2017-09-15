@@ -16,7 +16,7 @@ existing = raw_input(question)
 if existing == "Y" or existing == "y":
    spy_name = spy["salutation"] + " " + spy["name"]
    start_chat(spy["name"], spy["age"], spy["rating"], spy["is_online"])
-elif(existing == "N" or existing == "n"):
+elif existing == "N" or existing == "n":
     spy["name"] = raw_input("What is your name?")
     if len(spy["name"]) > 0: # Start writing from here now. See how this is under the if statement?
         if not spy["name"].isalpha():
@@ -34,9 +34,9 @@ elif(existing == "N" or existing == "n"):
             print "Alright " + spy["name"] + ". I'd like to know a little bit more about you before we proceed..."
 
             spy["age"] = int(raw_input("What is your age?"))
-            if spy["age"] > 12 and spy["age"] <50 :
+            if spy["age"] > 12 and spy["age"] < 50 :
                 print  "you are good to go"
-                spy["rating"]= int(raw_input("what is your spy rating?"))
+                spy["rating"]= raw_input("what is your spy rating?")
                 if spy["rating"] > 4.5:
                     print 'Great ace!'
                 elif spy["rating"] > 3.5 and spy["rating"] <= 4.5:
@@ -49,9 +49,8 @@ elif(existing == "N" or existing == "n"):
 
                     print "Authentication complete. Welcome " + spy["name"] +" age: " + str(spy["age"] + " and rating of: " +str(spy["rating"]) + " Proud to have you onboard."
                     # starting chat application
-                    start_chat(spy["name"], spy["age"], spy["rating"], spy["is_online"])
-        else:
-            print "you do not match the age criteria."
+            else:
+                  print 'you do not match the age criteria.'
     else:
         print "A spy needs to have valid name.Try again."
 else:
