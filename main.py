@@ -16,7 +16,7 @@ existing = raw_input(question)
 if existing == "Y" or existing == "y":
    spy_name = spy["salutation"] + " " + spy["name"]
    start_chat(spy["name"], spy["age"], spy["rating"], spy["is_online"])
-elif existing == "N" or existing == "n":
+elif (existing == "N" or existing == "n"):
     spy["name"] = raw_input("What is your name?")
     if len(spy["name"]) > 0: # Start writing from here now. See how this is under the if statement?
         if not spy["name"].isalpha():
@@ -26,16 +26,16 @@ elif existing == "N" or existing == "n":
             print "VALID INPUT NAME "
             spy["salutation"] = raw_input("What should we call you Mr. or Ms?")
             spy["name"] = spy["salutation"] + " " + spy["name"]
-
             print 'Welcome ' + spy["name"] + '. Glad to have you back with us.'
+            while True:
+                try:
+                    spy["age"] = int(raw_input("Enter your age here: "))  # int() : used for typecasting string into int
 
-            spy_salutation = raw_input("What should we call you (Mr. or Ms.)?")
-
-            print "Alright " + spy["name"] + ". I'd like to know a little bit more about you before we proceed..."
-
-            spy["age"] = int(raw_input("What is your age?"))
-            if spy["age"] > 12 and spy["age"] < 50 :
-                print  "you are good to go"
+                except ValueError:
+                    print "enter valid age. Try again."
+                if spy["age"] > 12 and spy["age"] < 50:
+                    print "You are good to go."
+                 print "Alright " + spy["name"] + ". I'd like to know a little bit more about you before we proceed..."
                 spy["rating"]= raw_input("what is your spy rating?")
                 if spy["rating"] > 4.5:
                     print 'Great ace!'
@@ -47,10 +47,13 @@ elif existing == "N" or existing == "n":
                     print 'We can always use somebody to help in the office.'
                     spy_is_online = True
 
-                    print "Authentication complete. Welcome " + spy["name"] +" age: " + str(spy["age"] + " and rating of: " +str(spy["rating"]) + " Proud to have you onboard."
+                    # starting chat application
+                    start_chat(spy["name"], spy["age"], spy["rating"], spy["is_online"])
+                    print "Authentication complete. Welcome " + spy["name"] +" age: " + str(spy["age"]) + " and rating of: " +str(spy["rating"]) + " Proud to have you onboard."
+
                     # starting chat application
             else:
-                  print 'you do not match the age criteria.'
+                  print "you do not match the age criteria."
     else:
         print "A spy needs to have valid name.Try again."
 else:

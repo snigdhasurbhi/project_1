@@ -1,4 +1,4 @@
-from global import friends
+from globall import friends
 
 def select_a_friend():
     counter = 1   #to increase the counter for printing friend from friends

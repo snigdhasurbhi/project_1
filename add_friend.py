@@ -1,5 +1,5 @@
 #import statements
-from global import friends
+from globall import friends
 
 #ADD NEW FRIENDS
 def add_friend():
@@ -8,7 +8,8 @@ def add_friend():
         "salutation": " ",
         "age": 0,
         "rating": 0.0,
-        "is_online": False
+        "is_online": False,
+        "chats" : []
     }
 
 
@@ -17,7 +18,7 @@ def add_friend():
     #concatination
     new_friend["name"] =  new_friend["salutation"] + " " + new_friend["name"]
     new_friend["age"] =int (raw_input("Age? "))
-    new_friend["rating"] =float( raw_input(" Spy Rating"))
+    new_friend["rating"] = float( raw_input(" Spy Rating"))
     #users input validation
     if len(new_friend["name"]) > 0 and new_friend["age"] > 12 and  new_friend["age"] < 50:
        # ADDFRIEND
