@@ -1,7 +1,7 @@
 from steganography.steganography import Steganography
-from select_friend import select_friend
+from select_friend import select_a_friend
 def read_message():
-    sender = select_friend()
+    sender = select_a_friend()
     output_path = raw_input("What is the name of the file?")
     secret_text = Steganography.decode(output_path)
-    print secret_message
+    print secret_text
