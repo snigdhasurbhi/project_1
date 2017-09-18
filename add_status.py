@@ -20,7 +20,7 @@ def add_status(current_status_message):
         # validating user input
         if len(new_status_message) > 0:
         # Adding new status to the list
-            STATUS_MESSAGES.append(new_status_message)
+            STATUS_MESSAGE.append(new_status_message)
             updated_status_message = new_status_message
             print "Your updated status message is %s" % (updated_status_message)
         else:
@@ -31,16 +31,16 @@ def add_status(current_status_message):
             item_position = 1
 
         # printing all older messages
-            for message in STATUS_MESSAGES:
+            for message in STATUS_MESSAGE:
                 print '%d.%s' % (item_position, message)
                 item_position = item_position + 1
 
             # asking user's choice.
             message_selection = int(raw_input("\n Choose from the above messages "))
 
-            if len(STATUS_MESSAGES) >= message_selection:
-                updated_status_message = STATUS_MESSAGES[message_selection -1]
-                print  'your udated message is: ' % updated_status_message
+            if len(STATUS_MESSAGE) >= message_selection:
+                updated_status_message = STATUS_MESSAGE[message_selection -1]
+                print  "your udated message is: " +  updated_status_message
             else:
              print 'Invalid choice. Try again.'
     else:

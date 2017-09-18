@@ -39,7 +39,8 @@ def start_chat(name, age, rating, status):
             number_of_friends = add_friend()
             print "You have %d friends" % (number_of_friends)
         elif (result == 3):
-            send_message() elif (result == 4):
+            send_message()
+        elif (result == 4):
             read_message()
         elif (result == 6):
             # close application

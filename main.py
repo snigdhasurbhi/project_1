@@ -1,7 +1,7 @@
 #importing spy_details.py file
 from spy_details import spy
 from start_chat  import start_chat
-
+import re
 
 #importing start_chat.p
 
@@ -17,14 +17,23 @@ if existing == "Y" or existing == "y":
    spy_name = spy["salutation"] + " " + spy["name"]
    start_chat(spy["name"], spy["age"], spy["rating"], spy["is_online"])
 elif (existing == "N" or existing == "n"):
-    spy["name"] = raw_input("What is your name?")
+    spy["name"] = raw_input("What is your name?") # raw_input(): function that returns string only
+    # validating user's input
+    # to check whether spy has input some name or not
     if len(spy["name"]) > 0: # Start writing from here now. See how this is under the if statement?
         if not spy["name"].isalpha():
+            # regular expression which matches only alphabets
+            pattern1 = '^[a-zA-Z\s]+$'
+            if re.match(pattern1, spy["name"]) is not None:
+            # string matched
             print " invalid spy_name INPUT "
             spy["name"] = raw_input("provide your name here again :")
         else:
             print "VALID INPUT NAME "
             spy["salutation"] = raw_input("What should we call you Mr. or Ms?")
+            pattern2 = '^[M][r s]$'
+            if re.match(pattern2, spy["salutation"]) is not None:
+                print "checking...."
             spy["name"] = spy["salutation"] + " " + spy["name"]
             print 'Welcome ' + spy["name"] + '. Glad to have you back with us.'
             while True:
@@ -37,14 +46,16 @@ elif (existing == "N" or existing == "n"):
                     print "You are good to go."
                  print "Alright " + spy["name"] + ". I'd like to know a little bit more about you before we proceed..."
                 spy["rating"]= raw_input("what is your spy rating?")
-                if spy["rating"] > 4.5:
-                    print 'Great ace!'
-                elif spy["rating"] > 3.5 and spy["rating"] <= 4.5:
-                    print 'You are one of the good ones.'
-                elif spy["rating"] >= 2.5 and spy["rating"] <= 3.5:
-                    print 'You can always do better'
-                else:
-                    print 'We can always use somebody to help in the office.'
+                pattern4 = '^[0-9]+\.[0-9]+$'
+                if re.match(pattern4, spy["rating"]) is not None:
+                    if spy["rating"] > 4.5:
+                        print 'Great ace!'
+                    elif spy["rating"] > 3.5 and spy["rating"] <= 4.5:
+                        print 'You are one of the good ones.'
+                    elif spy["rating"] >= 2.5 and spy["rating"] <= 3.5:
+                        print 'You can always do better'
+                    else:
+                        print 'We can always use somebody to help in the office.'
                     spy_is_online = True
 
                     # starting chat application
