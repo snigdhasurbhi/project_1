@@ -34,6 +34,9 @@ def add_friend():
                 if re.match(pattern7, new_friend["age"]) is not None:
                     print "CHECKING..."
                     new_friend["rating"] = float( raw_input(" Spy Rating"))
+                    pattern8 = '^[0-9]+\.[0-9]+$'
+                    if re.match(pattern8, new_friend["rating"]) is not None:
+                        print "CHECKING.."
                     #users input validation
                     if len(new_friend["name"]) > 0 and new_friend["age"] > 12 and  new_friend["age"] < 50:
                         # ADDFRIEND
