@@ -1,3 +1,5 @@
+
+
 #global variables and constants are here
 
 #current status message is initialized to None which is a keyword

@@ -2,7 +2,7 @@
 from spy_details import spy
 from start_chat import start_chat
 import re
-from colorama import Fore
+from colorama import Fore,init
 #importing start_chat.p
 print 'Let\'s get started'
 question = "Continue as " + spy['salutation'] + " " + spy['name'] + "(Y/N)?"

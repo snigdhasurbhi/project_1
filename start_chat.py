@@ -5,11 +5,11 @@ from send_message import send_message
 from read_message import read_message
 from globall import friends
 import time
-import read_chat_history
-from globall import current_status_message
+from read_chat_history import read_chat_history
+
 #start_chat() function definition
 def start_chat(name, age, rating, status):
-
+    from globall import current_status_message
     # validating user's details
     error_message = None  # variable for storing error message
     if not (age > 12 and age < 50):
@@ -59,7 +59,7 @@ def start_chat(name, age, rating, status):
                     # close application
                     show_menu = False
 
-                time.sleep(1)
-                print "Application is closed now."
+                    time.sleep(1)
+                    print "Application is closed now."
             else:
                 print "wrong choice.Try again later."
