@@ -44,9 +44,9 @@ elif (existing == "N" or existing == "n"):
                     pattern4 = '^[0-9]+\.[0-9]+$'
                     if re.match(pattern4, spy["rating"]) is not None:
                         if spy["rating"] > 4.5:
-                            print 'Great ace!'
+                            print Fore.GREEN +'Great ace!'
                         elif spy["rating"] > 3.5 and spy["rating"] <= 4.5:
-                            print 'You are one of the good ones.'
+                            print Fore.GREEN + 'You are one of the good ones.'
                         elif spy["rating"] >= 2.5 and spy["rating"] <= 3.5:
                             print 'You can always do better'
 
@@ -54,20 +54,20 @@ elif (existing == "N" or existing == "n"):
 
                         # starting chat application
                         start_chat(spy["name"], spy["age"], spy["rating"], spy["status"])
-                        print "Authentication complete. Welcome " + spy["name"] +" age: " + str(spy["age"]) + " and rating of: " +str(spy["rating"]) + " Proud to have you onboard."
+                        print Fore.GREEN + "Authentication complete. Welcome " + spy["name"] +" age: " + str(spy["age"]) + " and rating of: " +str(spy["rating"]) + " Proud to have you onboard."
                     else:
-                        print "Enter valid spy rating"
+                        print Fore.RED + "Enter valid spy rating"
                         # starting chat application
                 else:
-                    print "you do not match the age criteria."
+                    print Fore.RED + "you do not match the age criteria."
             else:
-                print"enter suitable salutation"
+                print Fore.RED +"enter suitable salutation"
         else:
-            print"enter valid name"
+            print Fore.RED +"enter valid name"
     else:
-        print "A spy needs to have valid name.Try again."
+        print Fore.RED + "A spy needs to have valid name.Try again."
 else:
-    print "wrong choice. Try again please."
+    print Fore.RED +"wrong choice. Try again please."
 
 
 

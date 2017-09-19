@@ -4,6 +4,7 @@ from add_friend import add_friend
 from send_message import send_message
 from read_message import read_message
 from globall import friends
+from colorama import Fore,init
 import time
 from read_chat_history import read_chat_history
 
@@ -16,11 +17,11 @@ def start_chat(name, age, rating, status):
         error_message = " INVALID AGE. PROVIDE VALID AGE"
         print error_message
     else:
-        welcome_message = "AUTHENTICATION COMPLETED. Welcome\n  " \
-                          "Name : " + name + "\n" \
-                          "Age : " + str(age) + "\ n" \
-                          "\Rating: " + str(rating) + "\n " \
-                          "Proud to have you here"
+        welcome_message = Fore.BLUE + "AUTHENTICATION COMPLETED. Welcome\n  " +\
+                          Fore.BLUE + "Name : " + name + "\n" +\
+                          Fore.BLUE + "Age : " + str(age) + "\ n" + \
+                          Fore.BLUE + "\Rating: " + str(rating) + "\n " + \
+                          Fore.GREEN + "Proud to have you here"
         print welcome_message
 
         # displaying menu for user
@@ -60,6 +61,6 @@ def start_chat(name, age, rating, status):
                     show_menu = False
 
                     time.sleep(1)
-                    print "Application is closed now."
+                    print Fore.RED + "Application is closed now."
             else:
                 print "wrong choice.Try again later."
