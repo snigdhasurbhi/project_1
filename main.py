@@ -23,7 +23,7 @@ elif (existing == "N" or existing == "n"):
         pattern1 = '^[a-zA-Z\s]+$'
         if re.match(pattern1, spy["name"]) is not None:
             print " valid spy_name INPUT "
-
+            # string matched
 
             spy["salutation"] = raw_input("What should we call you Mr. or Ms?")
             pattern2 = '^[M][r s]$'
@@ -33,7 +33,9 @@ elif (existing == "N" or existing == "n"):
                 print 'Welcome ' + spy["name"] + '. Glad to have you back with us.'
 
                 spy["age"] = int(raw_input("Enter your age here: "))  # int() : used for typecasting string into int
-
+                pattern3 = '^[0-9]+$'
+                if re.match(pattern3, spy["age"]) is not None:
+                    print "CHECKING..."
 
                 if spy["age"] > 12 and spy["age"] < 50:
                     print "You are good to go."
@@ -58,6 +60,10 @@ elif (existing == "N" or existing == "n"):
                         # starting chat application
                 else:
                     print "you do not match the age criteria."
+            else:
+                print"enter suitable salutation"
+        else:
+            print"enter valid name"
     else:
         print "A spy needs to have valid name.Try again."
 else:

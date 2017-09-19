@@ -12,7 +12,7 @@ def add_friend():
         "salutation": " ",
         "age": 0,
         "rating": 0.0,
-        "is_online": False,
+        "status": False,
         "chats" : []
     }
 
