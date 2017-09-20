@@ -6,7 +6,7 @@ from globall import STATUS_MESSAGE
 updated_status_message = None
 
 def add_status(current_status_message):
-    if current_status_message != None:
+    if current_status_message is not None:
 
         print "Your current status message is " % current_status_message + "\n"
     else:
@@ -33,7 +33,7 @@ def add_status(current_status_message):
 
         # printing all older messages
             for message in STATUS_MESSAGE:
-                print '%d.%s' % (item_position, message)
+                print '%d %s' % (item_position, message)
                 item_position = item_position + 1
 
             # asking user's choice.
@@ -43,9 +43,8 @@ def add_status(current_status_message):
                 updated_status_message = STATUS_MESSAGE[message_selection -1]
                 print  "your udated message is: " +  updated_status_message
             else:
-             print 'Invalid choice. Try again.'
+                 print'Invalid choice. Try again.'
     else:
-
-     print 'The option you chose is Invalid.'
+        print 'The option you chose is Invalid.'
 
     return updated_status_message

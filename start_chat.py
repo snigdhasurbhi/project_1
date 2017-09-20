@@ -7,20 +7,22 @@ from globall import friends
 from colorama import Fore,init
 import time
 from read_chat_history import read_chat_history
+import spy_details
+init()
 
 #start_chat() function definition
-def start_chat(name, age, rating, status):
+def start_chat(spy):
     from globall import current_status_message
     # validating user's details
     error_message = None  # variable for storing error message
-    if not (age > 12 and age < 50):
+    if not (spy.age > 12 and spy.age < 50):
         error_message = " INVALID AGE. PROVIDE VALID AGE"
         print error_message
     else:
         welcome_message = Fore.BLUE + "AUTHENTICATION COMPLETED. Welcome\n  " +\
-                          Fore.BLUE + "Name : " + name + "\n" +\
-                          Fore.BLUE + "Age : " + str(age) + "\ n" + \
-                          Fore.BLUE + "\Rating: " + str(rating) + "\n " + \
+                          Fore.BLUE + "Name : " + spy.name + "\n" +\
+                          Fore.BLUE + "Age : " + spy.age + "\ n" + \
+                          Fore.BLUE + "\Rating: " + spy.rating+ "\n " + \
                           Fore.GREEN + "Proud to have you here"
         print welcome_message
 
@@ -64,3 +66,8 @@ def start_chat(name, age, rating, status):
                     print Fore.RED + "Application is closed now."
             else:
                 print "wrong choice.Try again later."
+def show_friends():
+    counter = 1
+    for friend in friends:
+        print str(counter) + ". " + friend.name + "  : "
+        ounter = counter + 1

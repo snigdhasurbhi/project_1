@@ -1,6 +1,8 @@
 import re
 from globall import friends
-
+from globall import friends
+from colorama import init, Fore
+init()
 def select_friend():
     counter = 1   #to increase the counter for printing friend from friends
     for friend in friends :
@@ -16,4 +18,4 @@ def select_friend():
             return None
     else:
         print "Input INTEGER VALUE "
-        result = int(result)
+
